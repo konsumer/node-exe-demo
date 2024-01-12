@@ -1,0 +1,26 @@
+{
+  "name": "exe-demo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Working on ideas for packaging node-raylib game as SEA",
+  "scripts": {
+    "build:js": "mkdirp build && bpkg --node --cjs main.js > build/entry.cjs",
+    "build:sea": "node --experimental-sea-config sea-config.json",
+    "prebuild:sea": "npm run build:js",
+    "build": "node build.js build/exe-demo build/sea-prep.blob",
+    "prebuild": "npm run build:sea",
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "David Konsumer <dkonsumer@gummicube.com>",
+  "license": "MIT",
+  "dependencies": {
+    "raylib": "^0.14.0"
+  },
+  "devDependencies": {
+    "bpkg": "^0.7.0",
+    "mkdirp": "^3.0.1",
+    "postject": "^1.0.0-alpha.6"
+  }
+}

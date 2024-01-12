@@ -1,0 +1,4 @@
+{
+  "main": "build/entry.cjs",
+  "output": "build/sea-prep.blob"
+}
